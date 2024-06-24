@@ -1,0 +1,628 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "es-ES",
+    "dataSources": [
+      {
+        "name": "SqlServer DESKTOP-RE435NMMSSQLSERVER2022 TRANSACTION_DATAMART",
+        "connectionString": "Provider=SQLNCLI11;Data Source=DESKTOP-RE435NM\\MSSQLSERVER2022;Initial Catalog=TRANSACTION_DATAMART;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateServiceAccount",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "Dim_Categoria",
+        "columns": [
+          {
+            "name": "CategoriaID",
+            "dataType": "int64",
+            "sourceColumn": "CategoriaID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre_Categoria",
+            "dataType": "string",
+            "sourceColumn": "Nombre_Categoria",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_Categoria",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Dim_Categoria].*   FROM [dbo].[Dim_Categoria] ",
+              "dataSource": "SqlServer DESKTOP-RE435NMMSSQLSERVER2022 TRANSACTION_DATAMART"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Dim_Categoria].*   FROM [dbo].[Dim_Categoria] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_Categoria"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Dim_Clientes",
+        "columns": [
+          {
+            "name": "ClienteID",
+            "dataType": "int64",
+            "sourceColumn": "ClienteID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Cod_Cliente",
+            "dataType": "string",
+            "sourceColumn": "Cod_Cliente",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Edad",
+            "dataType": "int64",
+            "sourceColumn": "Edad",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Sexo",
+            "dataType": "string",
+            "sourceColumn": "Sexo",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Dispositivo",
+            "dataType": "string",
+            "sourceColumn": "Dispositivo",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Ubicacion_Compra",
+            "dataType": "string",
+            "sourceColumn": "Ubicacion_Compra",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Direccion_Compra",
+            "dataType": "string",
+            "sourceColumn": "Direccion_Compra",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_Clientes",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Dim_Clientes].*   FROM [dbo].[Dim_Clientes] ",
+              "dataSource": "SqlServer DESKTOP-RE435NMMSSQLSERVER2022 TRANSACTION_DATAMART"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Dim_Clientes].*   FROM [dbo].[Dim_Clientes] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_Clientes"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Dim_Mall",
+        "columns": [
+          {
+            "name": "MallCenterID",
+            "dataType": "int64",
+            "sourceColumn": "MallCenterID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre_Mall",
+            "dataType": "string",
+            "sourceColumn": "Nombre_Mall",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Nombre_Pais",
+            "dataType": "string",
+            "sourceColumn": "Nombre_Pais",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_Mall",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Dim_Mall].*   FROM [dbo].[Dim_Mall] ",
+              "dataSource": "SqlServer DESKTOP-RE435NMMSSQLSERVER2022 TRANSACTION_DATAMART"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Dim_Mall].*   FROM [dbo].[Dim_Mall] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_Mall"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Dim_MetodoPago",
+        "columns": [
+          {
+            "name": "MetodoPagoID",
+            "dataType": "int64",
+            "sourceColumn": "MetodoPagoID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre_Metodo",
+            "dataType": "string",
+            "sourceColumn": "Nombre_Metodo",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_MetodoPago",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Dim_MetodoPago].*   FROM [dbo].[Dim_MetodoPago] ",
+              "dataSource": "SqlServer DESKTOP-RE435NMMSSQLSERVER2022 TRANSACTION_DATAMART"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Dim_MetodoPago].*   FROM [dbo].[Dim_MetodoPago] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_MetodoPago"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Dim_Tiempo",
+        "columns": [
+          {
+            "name": "Fecha_Transaccion",
+            "dataType": "dateTime",
+            "sourceColumn": "Fecha_Transaccion",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "Tiempo_Año",
+            "dataType": "int64",
+            "sourceColumn": "Tiempo_Año",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Tiempo_Semestre",
+            "dataType": "int64",
+            "sourceColumn": "Tiempo_Semestre",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Tiempo_Trimestre",
+            "dataType": "int64",
+            "sourceColumn": "Tiempo_Trimestre",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Tiempo_Mes",
+            "dataType": "int64",
+            "sourceColumn": "Tiempo_Mes",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Tiempo_DiaDeMes",
+            "dataType": "int64",
+            "sourceColumn": "Tiempo_DiaDeMes",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Tiempo_Descripcion_Semestre",
+            "dataType": "string",
+            "sourceColumn": "Tiempo_Descripcion_Semestre",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Tiempo_Descripcion_Trimestre",
+            "dataType": "string",
+            "sourceColumn": "Tiempo_Descripcion_Trimestre",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Tiempo_Descripcion_Mes",
+            "dataType": "string",
+            "sourceColumn": "Tiempo_Descripcion_Mes",
+            "sortByColumn": "Tiempo_Mes",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_Tiempo",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Dim_Tiempo].*   FROM [dbo].[Dim_Tiempo] ",
+              "dataSource": "SqlServer DESKTOP-RE435NMMSSQLSERVER2022 TRANSACTION_DATAMART"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Dim_Tiempo].*   FROM [dbo].[Dim_Tiempo] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_Tiempo"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Fact_Transacciones",
+        "columns": [
+          {
+            "name": "TransaccionID",
+            "dataType": "int64",
+            "sourceColumn": "TransaccionID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ClienteID",
+            "dataType": "int64",
+            "sourceColumn": "ClienteID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "MetodoPagoID",
+            "dataType": "int64",
+            "sourceColumn": "MetodoPagoID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "MallCenterID",
+            "dataType": "int64",
+            "sourceColumn": "MallCenterID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CategoriaID",
+            "dataType": "int64",
+            "sourceColumn": "CategoriaID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Precio_unitario",
+            "dataType": "double",
+            "sourceColumn": "Precio_unitario",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Cantidad",
+            "dataType": "int64",
+            "sourceColumn": "Cantidad",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "MontoTotal",
+            "dataType": "double",
+            "sourceColumn": "MontoTotal",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Es_Fraudulento",
+            "dataType": "boolean",
+            "sourceColumn": "Es_Fraudulento",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "Boolean"
+          },
+          {
+            "name": "Fecha_Transaccion",
+            "dataType": "dateTime",
+            "sourceColumn": "Fecha_Transaccion",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "type": "calculated",
+            "name": "Mes",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": " MONTH(Fact_Transacciones[Fecha_Transaccion])"
+          },
+          {
+            "type": "calculated",
+            "name": "Jerarquia 2",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": " SWITCH([CategoriaID],1,\"Electronicos\",2,\"Ropa\",3,\"Jueguetes y Juegos\",4,\"Salud y Belleza\",5, \"Officina\", BLANK())"
+          },
+          {
+            "type": "calculated",
+            "name": "Jerarquia 1",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": " SWITCH([MallCenterID],1,\"Nebraska\",2,\"Horizonte\",3,\"Trinity\",4,\"WC\",BLANK())"
+          },
+          {
+            "type": "calculated",
+            "name": "NombreMes",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "  FORMAT(Fact_Transacciones[Fecha_Transaccion],\"mmmm-yy\")"
+          },
+          {
+            "type": "calculated",
+            "name": "Año",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": " YEAR(Fact_Transacciones[Fecha_Transaccion])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Fact_Transacciones",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Fact_Transacciones].*   FROM [dbo].[Fact_Transacciones] ",
+              "dataSource": "SqlServer DESKTOP-RE435NMMSSQLSERVER2022 TRANSACTION_DATAMART"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Marzo C",
+            "expression": " CALCULATE(SUM(Fact_Transacciones[Cantidad]),FILTER('Fact_Transacciones','Fact_Transacciones'[Mes]=3))"
+          },
+          {
+            "name": "Febrero C",
+            "expression": " CALCULATE(SUM(Fact_Transacciones[Cantidad]),FILTER('Fact_Transacciones','Fact_Transacciones'[Mes]=2))"
+          },
+          {
+            "name": "Sum Monto Frau",
+            "expression": " 5769956.35",
+            "kpi": {
+              "targetExpression": "100",
+              "statusGraphic": "Traffic Light",
+              "statusExpression": [
+                "var x='Fact_Transacciones'[Sum Monto Frau] return",
+                "            if(ISBLANK(x),BLANK(),",
+                "                    If(x<20,-1,",
+                "\t                If(x<70,0,1)",
+                "                )",
+                "            )",
+                "            "
+              ],
+              "annotations": [
+                {
+                  "name": "GoalType",
+                  "value": "StaticValue"
+                },
+                {
+                  "name": "KpiStatusType",
+                  "value": "Linear"
+                },
+                {
+                  "name": "KpiThresholdType",
+                  "value": "Absolute"
+                },
+                {
+                  "name": "KpiThresholdOrdering",
+                  "value": "Ascending"
+                },
+                {
+                  "name": "KpiThresholdCount",
+                  "value": "2"
+                },
+                {
+                  "name": "KpiThreshold_0",
+                  "value": "20"
+                },
+                {
+                  "name": "KpiThreshold_1",
+                  "value": "70"
+                }
+              ]
+            }
+          },
+          {
+            "name": "Suma Monto Legal",
+            "expression": " CALCULATE(SUM(Fact_Transacciones[MontoTotal]),FILTER('Fact_Transacciones','Fact_Transacciones'[Es_Fraudulento]=FALSE()))",
+            "kpi": {
+              "targetExpression": "'Fact_Transacciones'[Goal Legal]",
+              "statusGraphic": "Shapes",
+              "statusExpression": [
+                "var x='Fact_Transacciones'[Suma Monto Legal]/'Fact_Transacciones'[_Suma Monto Legal Goal] return",
+                "            if(ISBLANK(x),BLANK(),",
+                "                    If(x<0.7,-1,",
+                "\t                If(x<0.97,0,1)",
+                "                )",
+                "            )",
+                "            "
+              ],
+              "annotations": [
+                {
+                  "name": "GoalType",
+                  "value": "Measure"
+                },
+                {
+                  "name": "KpiStatusType",
+                  "value": "Linear"
+                },
+                {
+                  "name": "KpiThresholdType",
+                  "value": "Percentage"
+                },
+                {
+                  "name": "KpiThresholdOrdering",
+                  "value": "Ascending"
+                },
+                {
+                  "name": "KpiThresholdCount",
+                  "value": "2"
+                },
+                {
+                  "name": "KpiThreshold_0",
+                  "value": "70"
+                },
+                {
+                  "name": "KpiThreshold_1",
+                  "value": "97"
+                }
+              ]
+            }
+          },
+          {
+            "name": "CantidadMes",
+            "expression": " CALCULATE(DISTINCTCOUNT(Fact_Transacciones[NombreMes]),ALLEXCEPT(Fact_Transacciones,Fact_Transacciones[Año]))"
+          },
+          {
+            "name": "Goal",
+            "expression": " Fact_Transacciones[Sum Monto Frau] * 0.80"
+          },
+          {
+            "name": "Goal Legal",
+            "expression": " Fact_Transacciones[Suma Monto Legal] * 1.10"
+          },
+          {
+            "name": "Marzo C - M",
+            "expression": " CALCULATE(SUM(Fact_Transacciones[Cantidad]),\t\t\t\t\tFILTER('Dim_Clientes','Dim_Clientes'[Sexo]=\"Masculino\"),FILTER('Fact_Transacciones','Fact_Transacciones'[Mes]=3))"
+          },
+          {
+            "name": "Febrero C - M",
+            "expression": " CALCULATE(SUM(Fact_Transacciones[Cantidad]),\t\t\t\t\tFILTER('Dim_Clientes','Dim_Clientes'[Sexo]=\"Masculino\"),FILTER('Fact_Transacciones','Fact_Transacciones'[Mes]=2))"
+          },
+          {
+            "name": "C - Masculino",
+            "expression": " CALCULATE(SUM(Fact_Transacciones[Cantidad]),\t\t\t\t\tFILTER('Dim_Clientes','Dim_Clientes'[Sexo]=\"Masculino\"))"
+          },
+          {
+            "name": "Cantidades",
+            "expression": " SUM(Fact_Transacciones[Cantidad])",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Febrero C - F",
+            "expression": " CALCULATE(SUM(Fact_Transacciones[Cantidad]),\t\t\t\t\tFILTER('Dim_Clientes','Dim_Clientes'[Sexo]=\"Femenino\"),FILTER('Fact_Transacciones','Fact_Transacciones'[Mes]=2))"
+          },
+          {
+            "name": "Marzo C - F",
+            "expression": " CALCULATE(SUM(Fact_Transacciones[Cantidad]),\t\t\t\t\tFILTER('Dim_Clientes','Dim_Clientes'[Sexo]=\"Femenino\"),FILTER('Fact_Transacciones','Fact_Transacciones'[Mes]=3))"
+          },
+          {
+            "name": "Suma Monto Legal2",
+            "expression": " CALCULATE(SUM(Fact_Transacciones[MontoTotal]),FILTER('Fact_Transacciones','Fact_Transacciones'[Es_Fraudulento]=FALSE()))"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Fact_Transacciones].*   FROM [dbo].[Fact_Transacciones] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Fact_Transacciones"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "5d368e26-c6d2-445a-977d-9bea08c4ea3d",
+        "fromTable": "Fact_Transacciones",
+        "fromColumn": "Fecha_Transaccion",
+        "toTable": "Dim_Tiempo",
+        "toColumn": "Fecha_Transaccion"
+      },
+      {
+        "name": "aeaca924-727f-4321-8847-601f17124d41",
+        "fromTable": "Fact_Transacciones",
+        "fromColumn": "CategoriaID",
+        "toTable": "Dim_Categoria",
+        "toColumn": "CategoriaID"
+      },
+      {
+        "name": "3ca57d28-ef46-4a2a-a3b9-efa33b021ed5",
+        "fromTable": "Fact_Transacciones",
+        "fromColumn": "ClienteID",
+        "toTable": "Dim_Clientes",
+        "toColumn": "ClienteID"
+      },
+      {
+        "name": "779a6441-dda8-401d-bb67-051c30ed83db",
+        "fromTable": "Fact_Transacciones",
+        "fromColumn": "MallCenterID",
+        "toTable": "Dim_Mall",
+        "toColumn": "MallCenterID"
+      },
+      {
+        "name": "fea8335f-0315-4ec2-a18a-900eee1b8514",
+        "fromTable": "Fact_Transacciones",
+        "fromColumn": "MetodoPagoID",
+        "toTable": "Dim_MetodoPago",
+        "toColumn": "MetodoPagoID"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
